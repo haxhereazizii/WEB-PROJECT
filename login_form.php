@@ -60,7 +60,7 @@ if(isset($error)){
 ?>
 <input type="email" name="email" required placeholder ="Enter your email">
 <input type="password" name="password" required placeholder ="Enter your password">
-<input type="submit" name="submit" value="register now" class="form-btn">
+<input type="submit" name="submit" value="login now" class="form-btn">
 <p> Don't have an account? <a href="register_form.php">Register Now </p>
 
 </form>

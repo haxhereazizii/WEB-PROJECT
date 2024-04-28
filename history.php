@@ -15,7 +15,7 @@ if(!isset(  $_SESSION['user_name'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/userpage.css">
-    <script defer src="activepage.js"> </script>
+   <script defer src="activepage.js"> </script>
     <title>webpage</title>
 </head>
 <body>
@@ -57,56 +57,16 @@ if(!isset(  $_SESSION['user_name'])){
               <li><a class="dropdown-item" href="contact.php">Contact me!</a></li>
             </ul>
           </li>
-          </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="user_page.php">.....</a>
+            <a class="nav-link active" aria-current="page" href="user_page.php">First Page</a>
           </li>
         </ul>
-        
-       
       </div>
     </div>
   </div>
 </nav>
 </div>
- <div class="card-container">
-
-  <div class="card"> 
-    <img src="pixtures/cardpixprishtina.jpg">
-    <div class="card-content">
-      <h3> Prishtina </h3>
-      <p> Prishtina, Kosovo's vibrant capital, merges history and modernity in its lively streets and diverse culture.</p>
-      <a href="" class="btn_more">READ MORE </a>
-    </div>
-  </div>
  
-  <div class="card"> 
-    <img src="pixtures/cardpixprizren.jpg">
-    <div class="card-content">
-      <h3> Prizren </h3>
-      <p> Prizren, a jewel landscape, captivates with its ancient charm and scenic beauty,historical wonders meet tranquil riverbanks.</p>
-      <a href="" class="btn_more">READ MORE </a>
-    </div>
-  </div>
-  <div class="card"> 
-    <img src="pixtures/cardpixpeja.jpg">
-    <div class="card-content">
-      <h3>Peja</h3>
-      <p> Peja, nestled amidst Kosovo's majestic mountains, mesmerizes with its natural splendor and rich heritage.</p>
-      <a href="" class="btn_more">READ MORE </a>
-    </div>
-  </div>
-
-  <div class="card"> 
-    <img src="pixtures/cardpixrugova.jpg">
-    <div class="card-content">
-      <h3>Rugove </h3>
-      <p> Rugova offers an enchanting retreat for nature enthusiasts and adventurers alike, nestled in Kosovo's picturesque landscapes</p>
-      <a href="" class="btn_more">READ MORE </a>
-    </div>
-  </div>
-
-</div>
 </body>
 </html>
 
