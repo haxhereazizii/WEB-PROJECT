@@ -67,7 +67,11 @@ if(!isset(  $_SESSION['user_name'])){
   </div>
 </nav>
 <section class="text_1"> 
+<<<<<<< HEAD
   <span>HEY! <span><?php echo $_SESSION['user_name']; ?> </span> </span>
+=======
+  <span>HEY! you, </span>
+>>>>>>> 3ff9f7ed230024b047e5ab3b9ba1b933a5df7c6f
   <h1>Ready to uncover Kosovo's wonders? Let's explore together!</h1>
   <br>
   <a href="moreaboutkosovo.php">Start Exploring</a>

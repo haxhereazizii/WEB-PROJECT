@@ -100,6 +100,53 @@ if(!isset(  $_SESSION['user_name'])){
     
     </div>
   </div>
+<<<<<<< HEAD
+=======
+
+  <div class="card"> 
+    <img src="pixtures/cardpixrugova.jpg">
+    <div class="card-content">
+      <h3>Rugove </h3>
+      <p> Rugova offers an enchanting retreat for nature enthusiasts and adventurers alike, nestled in Kosovo's picturesque landscapes</p>
+   
+    </div>
+  </div>
+  <div class="card"> 
+    <img src="pixtures/driniibardhe.jpg">
+    <div class="card-content">
+      <h3> Drini i bardhe</h3>
+      <p> Drini i Bardhë, or the White Drin, is a scenic river in Kosovo, cherished for its beauty and cultural significance. </p>
+     
+    </div>
+  </div>
+  <div class="card"> 
+    <img src="pixtures/maletesharrit.jpg">
+    <div class="card-content">
+      <h3> Sharr mountains </h3>
+      <p> The sharr mountains are a breathtaking natural wonder known for their rugged beauty and diverse ecosystems.</p>
+     
+    </div>
+  </div>
+  <div class="card"> 
+    <img src="pixtures/GJAKOVA.jpg">
+    <div class="card-content">
+      <h3> Gjakova </h3>
+      <p>  Gjakova boasts a rich tapestry of architectural wonders, including Ottoman-era mosques, traditional bazaars, and centuries-old bridges.</p>
+     
+    </div>
+  </div><div class="card"> 
+    <img src="pixtures/gjilan.jpg">
+    <div class="card-content">
+      <h3> Gjilan </h3>
+      <p> Moreover, Gjilan is a melting pot of cultures, with influences from various ethnicities and backgrounds shaping its unique identity. </p>
+     
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+>>>>>>> 3ff9f7ed230024b047e5ab3b9ba1b933a5df7c6f
 
   <div class="card"> 
     <img src="pixtures/cardpixrugova.jpg">
