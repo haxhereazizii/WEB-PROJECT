@@ -66,11 +66,11 @@ if(!isset(  $_SESSION['user_name'])){
 </nav>
 
 <div class="container">
-<<<<<<< HEAD
+
   <form >
-=======
-  <form onsubmit="sendEmail(); reset(); return false;">
->>>>>>> 3ff9f7ed230024b047e5ab3b9ba1b933a5df7c6f
+
+  <form >
+
     <h3>CONTACT ME</h3>
     <input type="text" id="name" placeholder="Your name here" required >
     <input type="email" id="email" placeholder="Your email here" required >
@@ -83,46 +83,16 @@ if(!isset(  $_SESSION['user_name'])){
 
 </div>
  
-<<<<<<< HEAD
 
 
-=======
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
-function sendEmail() {
-  var userName = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var phone = document.getElementById('phone').value;
-  var message = document.getElementById('message').value;
-  var messageBody = "Name: " + userName + "<br/> Phone: " + phone + "<br/> Email: " + email + "<br/> Message: " + message;
-  
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "nowayjerry22@gmail.com",
-    Password: "9D290013AD70101A03DAE236602A616EAE19",
-    Port: 2525,
-    To: 'haxhere.azizi24@gmail.com',
-    From: "nowayjerry22@gmail.com",
-    Subject: "WEB PAGE CONTACT FORM",
-    Body: messageBody
-  }).then(
-    message => alert("Message sent successfully")
-  ).catch(
-    error => alert("Error: " + JSON.stringify(error))
-  );
-}
-</script>
->>>>>>> 3ff9f7ed230024b047e5ab3b9ba1b933a5df7c6f
 
 
 
 
 </body>
-<<<<<<< HEAD
-=======
 
 </html>
 
->>>>>>> 3ff9f7ed230024b047e5ab3b9ba1b933a5df7c6f
+
 
 </html>
