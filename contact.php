@@ -14,8 +14,7 @@ if(!isset(  $_SESSION['user_name'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/userpage.css">
-   <script defer src="activepage.js"> </script>
+    <link rel="stylesheet" href="css/contact.css">
     <title>webpage</title>
 </head>
 <body>
@@ -24,7 +23,7 @@ if(!isset(  $_SESSION['user_name'])){
 <nav class="navbar navbar-expand-lg  fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Dear,<span><?php echo $_SESSION['user_name']; ?>
-        </span> Enjoy the beauty of Kosovo!</a>
+        </span> Feel free to contact me!</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -65,9 +64,27 @@ if(!isset(  $_SESSION['user_name'])){
     </div>
   </div>
 </nav>
+
+<div class="container">
+  <form >
+    <h3>CONTACT ME</h3>
+    <input type="text" id="name" placeholder="Your name here" required >
+    <input type="email" id="email" placeholder="Your email here" required >
+    <input type="text" id="phone" placeholder="Your phone number here" required >
+  <textarea  id="message"  rows="7" placeholder="How can I help you?" required></textarea>
+  <button type="submit">Send </button>
+</form>
+ </div>
+
+
 </div>
+ 
+
+
+
+
+
 
 </body>
+
 </html>
-
-
