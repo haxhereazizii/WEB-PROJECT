@@ -50,8 +50,8 @@ if(!isset(  $_SESSION['user_name'])){
               About me
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="hobbies.php">Hobbies</a></li>
-              <li><a class="dropdown-item" href="cv.php">CV</a></li>
+            <li><a class="dropdown-item" href="cv.php">CV</a></li>
+              <li><a class="dropdown-item" href="rewiew.php">Review us!</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
