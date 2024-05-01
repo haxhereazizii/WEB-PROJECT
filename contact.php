@@ -45,6 +45,7 @@ if(!isset(  $_SESSION['user_name'])){
               About me
             </a>
             <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="aboutme.php" target="blank">About me</a></li>
             <li><a class="dropdown-item" href="cv.php">CV</a></li>
               <li><a class="dropdown-item" href="rewiew.php">Rewiew us!</a></li>
            
