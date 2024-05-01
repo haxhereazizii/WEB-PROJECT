@@ -1,7 +1,7 @@
 <?php
 @include 'config.php';
 session_start();
-if(!isset(  $_SESSION['user_name'])){
+if(!isset($_SESSION['user_name'])){
     header('location:login_form.php');
 }
 
@@ -68,18 +68,16 @@ if(!isset(  $_SESSION['user_name'])){
   </div>
 </nav>
 
-
-
-<div class="container">
-<div class="header">
+<main class="container">
+<section class="header">
   <div class="img_area">
     <img src="pixtures/5068379120 (2).jpg" alt="">
   </div>
   <h1>HAXHERE AZIZI</h1>
   <h3>Computer engineering student</h3>
-</div>
-<div class="main">
-  <div class="left">
+</section>
+<section class="main">
+  <aside class="left">
     <h2>Contact information</h2>
 
     <p> <strong>Email:</strong>haxhere.azizi24@gmail.com</p>
@@ -102,8 +100,8 @@ Mehmet Ali Behluli Street
        <p> Major computer engineering (first year)- Türkiye </p>
        <h3>Science high school “Xhavit Ahmeti”</h3>
        <p>Graduated at 2023-Kosovo</p>
-  </div>
-  <div class="right">
+  </aside>
+  <article class="right">
     <h2>Work experience</h2>
     <h3> Career club of Xhavit Ahmeti</h3>
     <p><strong>Position:</strong>Event organizer</p>
@@ -127,10 +125,9 @@ in Kosovo for partnership in Solidarity action day in 2023, and represented Koso
 
  </li>
   </ul>
-  </div>
-</div>
-</div>
+  </article>
+</section>
+</main>
 
-</div>
 </body>
 </html>
