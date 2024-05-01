@@ -11,7 +11,7 @@ body {
 
 header {
     background-color: whitesmoke;
-    padding: 30px;
+    
 }
 
 * {
@@ -28,7 +28,7 @@ header h1 {
     text-align: center;
     font-size: 60px;
     color: crimson;
-    margin: 1.5 0 px;
+    margin: 20px 0;
 }
 
 h2 {
@@ -51,7 +51,7 @@ h2 {
     padding: 20px;
     background-color: whitesmoke;
     margin-top: 20px;
-    text-align: center; /* Center the content horizontally */
+    text-align: center; 
 }
 
 .card img {
@@ -65,7 +65,7 @@ h2 {
 
 .right-column .card img {
     margin-bottom: 10px;
-    width: 100%; /* Adjust this value as needed */
+    width: 100%; 
     max-width: 200px;
 }
 

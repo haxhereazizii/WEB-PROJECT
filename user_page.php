@@ -43,14 +43,15 @@ if(!isset(  $_SESSION['user_name'])){
             <a class="nav-link active" aria-current="page" href="history.php">History</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="contry.php">Contry</a>
+            <a class="nav-link active" aria-current="page" href="contry.php">API</a>
          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               About me
             </a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="aboutme.php" target="blank">About me</a></li>
+            <li><a class="dropdown-item" href="aboutme.php">About me</a></li>
+
             <li><a class="dropdown-item" href="cv.php">CV</a></li>
               <li><a class="dropdown-item" href="rewiew.php">Review us!</a></li>
               <li>
