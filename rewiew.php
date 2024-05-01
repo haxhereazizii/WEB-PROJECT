@@ -165,7 +165,7 @@ if(!isset(  $_SESSION['user_name'])){
         return Object.keys(errors).length === 0;
       },
       showModal() {
-    $('#formDataModal').modal('show'); // Using jQuery for simplicity, adjust if needed
+    $('#formDataModal').modal('show'); 
   }
     }
   });

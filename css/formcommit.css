@@ -27,15 +27,15 @@ body, html {
     overflow-wrap: break-word; 
 }
 button{
-    padding: 20px 40px; /* Increased padding */
+    padding: 20px 40px; 
     background-color: crimson;
     color: whitesmoke;
-    font-size: 24px; /* Increased font size */
+    font-size: 24px; 
     border: 0;
     outline: none;
     cursor: pointer;
-    width: auto; /* Let the width adjust automatically */
-    display: block; /* Ensure the button takes full width */
+    width: auto; 
+    display: block; 
     margin: 20px auto 0;
     border-radius: 30px;
   

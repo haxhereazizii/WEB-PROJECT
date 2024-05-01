@@ -69,16 +69,16 @@
 /* Styles for screens smaller than 768px */
 @media (max-width: 768px) {
   .content h1 {
-    font-size: 60px; /* Adjust font size for smaller screens */
+    font-size: 60px; 
   }
   
   .content p {
-    font-size: 16px; /* Adjust font size for smaller screens */
+    font-size: 16px; 
   }
   
   .button {
-    width: 150px; /* Adjust button width for smaller screens */
-    margin: 10px auto; /* Center buttons vertically */
+    width: 150px; 
+    margin: 10px auto; 
   }
 }
   
