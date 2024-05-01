@@ -45,7 +45,7 @@ if(!isset(  $_SESSION['user_name'])){
         <div class="right-column">
         <div class="card">
     <h2>Spotify recommendations here!</h2>
-    <a href="https://open.spotify.com/playlist/37i9dQZF1E34WaJh3QdfK1?si=bd327d795f894e05">
+    <a href="https://open.spotify.com/playlist/37i9dQZF1E34WaJh3QdfK1?si=bd327d795f894e05" target="_blank">
         <img src="pixtures/spotify.jpg" alt="me">
     </a>
     <p>click up for more!</p>
