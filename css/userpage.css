@@ -19,7 +19,6 @@ body, html {
 
 .text_1 {
   max-width: 650px;
-
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -27,6 +26,7 @@ body, html {
 
 .text_1 span {
   letter-spacing: 5px;
+  font-size: 1.3em;
 }
 
 .text_1 h1 {

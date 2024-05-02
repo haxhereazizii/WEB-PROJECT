@@ -8,7 +8,11 @@ if(!isset(  $_SESSION['user_name'])){
 ?>
 
 
-
+<style>
+        body {
+            background-color: #FFE4E5 !important;
+        }
+    </style>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +78,7 @@ if(!isset(  $_SESSION['user_name'])){
 <div class="pageclr">
     <h1>Movie Search API</h1>
     <form action="">
-  <input type="text" class="search-box" placeholder="search for movie...">
+  <input type="text" class="search-box" placeholder="Search for movie...">
   <button class="search-btn">Search</button>
 </form>
 </div>

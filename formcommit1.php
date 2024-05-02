@@ -1,18 +1,16 @@
 
 <?php
-session_start();
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $name = isset($_POST["name"]) ? $_POST["name"] : "";
-    $email = isset($_POST["email"]) ? $_POST["email"] : "";
-    $phone = isset($_POST["phone"]) ? $_POST["phone"] : "";
-    $message = isset($_POST["message"]) ? $_POST["message"] : "";
-} else {
-    // If form data is not submitted, redirect to contact form
-    header("Location: contact.php");
-    exit;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $message = $_POST['message'];
+
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><strong>Phone:</strong> <?php echo htmlspecialchars($phone); ?></p>
             <p><strong>Message:</strong> <?php echo htmlspecialchars($message); ?></p>
         </div>
-        <button onclick="window.location.href='contact.php'">Go Back to the contact form</button>
+        <button onclick="window.location.href='rewiew.php'">Go Back to the rewiew form</button>
       
     </div>
 </body>

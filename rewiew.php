@@ -1,12 +1,10 @@
 <?php
-@include 'config.php';
 session_start();
-if(!isset(  $_SESSION['user_name'])){
+@include 'config.php';
+if(!isset($_SESSION['user_name'])){
     header('location:login_form.php');
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,15 +13,15 @@ if(!isset(  $_SESSION['user_name'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <title>webpage</title>
+    <title>Review Form</title>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/rewiew.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg  fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Dear,<span><?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest'; ?></span> Feel free to review us!</a>
+    <a class="navbar-brand" href="#">Dear, <span><?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest'; ?></span> Feel free to review us!</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,11 +46,9 @@ if(!isset(  $_SESSION['user_name'])){
               About me
             </a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="aboutme.php">About me</a></li>
-
-            <li><a class="dropdown-item" href="cv.php">CV</a></li>
+              <li><a class="dropdown-item" href="aboutme.php">About me</a></li>
+              <li><a class="dropdown-item" href="cv.php">CV</a></li>
               <li><a class="dropdown-item" href="rewiew.php">Review us!</a></li>
-           
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="contact.php">Contact me!</a></li>
             </ul>
@@ -67,21 +63,25 @@ if(!isset(  $_SESSION['user_name'])){
 </nav>
 <div id="app">
 <div class="container">
-<form id="reviewForm" method="post" action="formcommit.php" target="_blank" @submit.prevent="submitForm" >
+<form id="reviewForm" method="post" target="blank" action="formcommit1.php" @submit.prevent="submitForm" >
 
         <h3>REVIEW US:</h3>
-        <input type="text" v-model="formData.name" placeholder="Your name here" >
-        <input type="email" v-model="formData.email" placeholder="Your email here" >
-        <input type="text" v-model="formData.phone" placeholder="Your phone number here" >
-        <textarea v-model="formData.message" rows="7" placeholder="What do you want us to know about, anything to fix?" ></textarea>
-       
+        <input type="text" v-model="formData.name" name="name" placeholder="Your name here" >
+        <div class="msgerrorr" v-if="errors.name">{{ errors.name }}</div>
+        <input type="email" v-model="formData.email" name="email" placeholder="Your email here" >
+        <div class="msgerrorr" v-if="errors.email">{{ errors.email }}</div>
+        <input type="text" v-model="formData.phone" name="phone" placeholder="Your phone number here" >
+        <div class="msgerrorr" v-if="errors.phone">{{ errors.phone }}</div>
+        <textarea v-model="formData.message" name="message" rows="7" placeholder="What do you want us to know about, anything to fix?" ></textarea>
+        <div class="msgerrorr" v-if="errors.message">{{ errors.message }}</div>
+
         <div class="button-container">
             <button type="submit" :disabled="!validateForm">Send</button>
             <button type="button" @click="clearForm">CLEAR</button>
         </div>
-        <div v-if="errors.name">{{ errors.name }}</div>
-        <div v-if="errors.email">{{ errors.email }}</div>
-        <div v-if="errors.phone">{{ errors.phone }}</div>
+    
+
+     
     </form>
 </div>
 </div>
@@ -106,7 +106,6 @@ if(!isset(  $_SESSION['user_name'])){
   </div>
 </div>
 
-<!-- Update Vue.js code -->
 <script>
   new Vue({
     el: '#app',
@@ -120,15 +119,34 @@ if(!isset(  $_SESSION['user_name'])){
       errors: {}
     },
     methods: {
-   
-        submitForm() {
-  if (this.validateForm()) {
-    // Submit the form
-    document.getElementById('reviewForm').submit();
-    // Open the modal
-    $('#formDataModal').modal('show');
-  }
+      validateForm() {
+    let errors = {};
 
+    if (!this.formData.name) {
+        errors.name = '*Name is required';
+    }
+
+    if (!this.formData.email) {
+        errors.email = '*Email is required';
+    } else if (!this.isValidEmail(this.formData.email)) {
+        errors.email = '*Invalid email address';
+    }
+
+    if (!this.formData.phone) {
+        errors.phone = '*Phone number is required';
+    } else if (!/^\d+$/.test(this.formData.phone)) {
+        errors.phone = '*Phone number must contain only numbers';
+    }
+
+    if (!this.formData.message) {
+        errors.message = '*Message is required';
+    }
+
+    this.errors = errors;
+    return Object.keys(errors).length === 0;
+},
+      isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       },
       clearForm() {
         this.formData = {
@@ -139,36 +157,19 @@ if(!isset(  $_SESSION['user_name'])){
         };
         this.errors = {};
       },
-      isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      },
-      validateForm() {
-        let errors = {};
-
-        if (!this.formData.name) {
-          errors.name = 'Name is required';
-        }
-
-        if (!this.formData.email) {
-          errors.email = 'Email is required';
-        } else if (!this.isValidEmail(this.formData.email)) {
-          errors.email = 'Invalid email address';
-        }
-
-        if (!this.formData.phone) {
-          errors.phone = 'Phone number is required';
-        } else if (!/^\d+$/.test(this.formData.phone)) {
-          errors.phone = 'Phone number must contain only numbers';
-        }
-
-        this.errors = errors;
-        return Object.keys(errors).length === 0;
-      },
       showModal() {
-    $('#formDataModal').modal('show'); 
-  }
+        $('#formDataModal').modal('show'); 
+      },
+      submitForm() {
+    if (this.validateForm()) {
+        // Submit the form programmatically
+        document.getElementById('reviewForm').submit();
+    }
+}
+
     }
   });
 </script>
+
 </body>
 </html>

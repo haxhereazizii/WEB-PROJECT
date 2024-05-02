@@ -1,0 +1,42 @@
+body, html {
+    background-color: #FFE4E5;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; 
+}
+.container h1{
+    color: crimson;
+}
+
+.contact-details {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+    overflow-wrap: break-word; 
+}
+button{
+    padding: 20px 40px; 
+    background-color: crimson;
+    color: whitesmoke;
+    font-size: 24px; 
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: auto; 
+    display: block; 
+    margin: 20px auto 0;
+    border-radius: 30px;
+  
+}
