@@ -1,8 +1,8 @@
 <?php
 @include 'config.php';
 session_start();
-if(!isset(  $_SESSION['user_name'])){
-    header('location:login_form.php');
+if(!isset(  $_SESSION['user_name'])){  // Checking if user is not logged in
+    header('location:login_form.php'); // Redirecting to login page if not logged in
 }
 
 ?>
@@ -69,7 +69,7 @@ if(!isset(  $_SESSION['user_name'])){
   </div>
 </nav>
 <section class="text_1"> 
-
+<!--POSTES the name inserted during the registration form here -->
   <span>HEY! <span><?php echo $_SESSION['user_name']; ?> </span> </span>
 
   

@@ -68,8 +68,9 @@ if(!isset($_SESSION['user_name'])){
     </div>
   </div>
 </nav>
-
+<!-- Main content -->
 <main class="container">
+    <!-- Header section with pix and name/magor -->
 <section class="header">
   <div class="img_area">
     <img src="pixtures/5068379120 (2).jpg" alt="">
@@ -77,7 +78,9 @@ if(!isset($_SESSION['user_name'])){
   <h1>HAXHERE AZIZI</h1>
   <h3>Computer engineering student</h3>
 </section>
+ <!-- Main section -->
 <section class="main">
+     <!-- Left column done with aside option -->
   <aside class="left">
     <h2>Contact information</h2>
 
@@ -102,6 +105,7 @@ Mehmet Ali Behluli Street
        <h3>Science high school “Xhavit Ahmeti”</h3>
        <p>Graduated at 2023-Kosovo</p>
   </aside>
+   <!-- Right column done with article -->
   <article class="right">
     <h2>Work experience</h2>
     <h3> Career club of Xhavit Ahmeti</h3>

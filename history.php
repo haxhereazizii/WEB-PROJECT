@@ -67,6 +67,7 @@ if(!isset(  $_SESSION['user_name'])){
   </div>
 </nav>
 </div>
+<!-- Displaying cards with historical information, and creating links for each of them -->
 <div class="card-container">
 
 <div class="card"> 

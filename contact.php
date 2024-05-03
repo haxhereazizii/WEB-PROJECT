@@ -65,6 +65,7 @@ if(!isset(  $_SESSION['user_name'])){
 </nav>
 
 <div class="container">
+   <!-- the function of the java script code is called here! -->
 <form onsubmit="return validateForm()" action="formcommit.php" method="post" target="_blank">
     <h3>CONTACT ME</h3>
     <input type="text" name="name" id="name" placeholder="Your name here">
@@ -74,11 +75,11 @@ if(!isset(  $_SESSION['user_name'])){
    
     <div class="button-container">
         <button type="submit">Send</button>
-        <button type="button" onclick="clearForm()">CLEAR</button>
+        <button type="button" onclick="clearForm()">CLEAR</button>  <!-- clear the form function is called here -->
     </div>
 </form>
 </div>
-
+ <!-- validation form function that checks the datta if its filed correctly! -->
 <script>
     function validateForm() {
         var name = document.getElementById("name").value;

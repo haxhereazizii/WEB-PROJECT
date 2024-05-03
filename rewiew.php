@@ -61,6 +61,7 @@ if(!isset($_SESSION['user_name'])){
     </div>
   </div>
 </nav>
+
 <div id="app">
 <div class="container">
 <form id="reviewForm" method="post" target="blank" action="formcommit1.php" @submit.prevent="submitForm" >
@@ -105,11 +106,13 @@ if(!isset($_SESSION['user_name'])){
     </div>
   </div>
 </div>
-
+<!-- Vue.js Script -->
 <script>
+
   new Vue({
-    el: '#app',
+    el: '#app',  // Binding Vue instance to the element with id 'app'
     data: {
+      // Data properties for form fields and validation errors
       formData: {
         name: '',
         email: '',
@@ -119,9 +122,10 @@ if(!isset($_SESSION['user_name'])){
       errors: {}
     },
     methods: {
-      validateForm() {
+      // Method to validate form data
+      validateForm() {   
     let errors = {};
-
+       // Validation rules
     if (!this.formData.name) {
         errors.name = '*Name is required';
     }
@@ -141,13 +145,15 @@ if(!isset($_SESSION['user_name'])){
     if (!this.formData.message) {
         errors.message = '*Message is required';
     }
-
+      // Assign errors object to the Vue data property
     this.errors = errors;
+      // Return true if there are no errors, false otherwise
     return Object.keys(errors).length === 0;
 },
-      isValidEmail(email) {
+      isValidEmail(email) {     // Email validation logic
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       },
+          // Method to clear form data and errors
       clearForm() {
         this.formData = {
           name: '',
@@ -157,6 +163,8 @@ if(!isset($_SESSION['user_name'])){
         };
         this.errors = {};
       },
+            // Method to show form data modal
+
       showModal() {
         $('#formDataModal').modal('show'); 
       },

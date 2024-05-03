@@ -117,7 +117,7 @@ text-align: center;
 
 }
 
-.form-container form .form-btn:hover{
+.form-container form .form-btn:hover{   /*  mause on*/
     background: crimson;
     color: #fff;
 
@@ -133,7 +133,7 @@ text-align: center;
     color: crimson;
 }
 
-.form-container form .error-msg{
+.form-container form .error-msg{  /* errorr mesages that shows up if you leave any info empty */
     margin: 10px 0;
     display: block;
     background: crimson;

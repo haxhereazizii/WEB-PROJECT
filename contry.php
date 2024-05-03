@@ -77,23 +77,22 @@ if(!isset(  $_SESSION['user_name'])){
 </nav>
 <div class="pageclr">
     <h1>Movie Search API</h1>
+     <!-- Form for searching movies -->
     <form action="">
   <input type="text" class="search-box" placeholder="Search for movie...">
   <button class="search-btn">Search</button>
 </form>
 </div>
+<!-- Container for displaying images after api  -->
     <div class="image-container">
-      
-    </div>
-    
+        </div>
+     <script src="./main.js"></script>
+        </div>
 
 
-    <script src="./main.js"></script>
-  
-</div>
+<!--API ADDED HERE!!!!! TV MAZE API -->
 
-
-<!--API ADDED HERE!!!!! -->
+<!-- JavaScript for interacting with the API and displaying images -->
 <script>
   const form = document.querySelector('form')
 const gallery = document.querySelector('.image-container');
@@ -109,14 +108,14 @@ form.addEventListener('submit',(e)=>{
     }
     tvMazeApi(query);
 })
-
+  // Function to fetch data from the TV Maze API
 async function tvMazeApi(query){
     const res=await fetch(`https://api.tvmaze.com/search/shows?q=${query}`);
     const shows=await res.json();
     
     makeImages(shows);
 }
-
+  // Function to create and display images
 function makeImages(shows) {
     for(let show of shows)
     {

@@ -66,7 +66,9 @@ if(!isset(  $_SESSION['user_name'])){
     <header>
         <h1>Hey there, <span><?php echo $_SESSION['user_name']; ?> </span> Welcome to my blog!</h1>
     </header>
+    <!-- Main content -->
     <div class="row">
+       <!-- Left column to be cssed-->
         <div class="left-column">
 
             <div class="card">
@@ -88,7 +90,7 @@ if(!isset(  $_SESSION['user_name'])){
             </div>
            
         </div>
-
+<!-- Right column to be css -->
         <div class="right-column">
         <div class="card">
     <h2>Spotify recommendations here!</h2>
@@ -115,7 +117,7 @@ if(!isset(  $_SESSION['user_name'])){
 
         </div>
     </div>
-
+ <!-- Footer of blog -->
     <footer>
         <h1>Did you see my cv?</h1>
     <a href="cv.php"><button>GO TO CV</button></a>

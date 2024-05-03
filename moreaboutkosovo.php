@@ -15,7 +15,7 @@ if(!isset($_SESSION['user_name'])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/moreaboutkosovo.css">
     <style>
-     /* Additional CSS styles for the info box */
+     /* Additional CSS styles for the info box after java script is executed*/
 #country-info {
     display: none;
     position: fixed;
@@ -109,7 +109,7 @@ if(!isset($_SESSION['user_name'])){
         </div>
     </div>
 </nav>
-
+   <!-- Card elements that on click shows the contry info box and the google maps links created down in js -->
 <div class="card-container">
     <div class="card" onclick="showCountryInfo('Prishtina', 'Explore the vibrant café culture of Prishtina, where you can enjoy a traditional macchiato while soaking in the city\'s lively atmosphere and street art.')">
         <img src="pixtures/cardpixprishtina.jpg">
@@ -186,15 +186,22 @@ if(!isset($_SESSION['user_name'])){
 <script>
 
 function showCountryInfo(country, info) {
-    var infoHTML = "<h3>" + country + "</h3>";
-    infoHTML += "<p>" + info + "</p>";
+    // Creating HTML content for country information
+    var infoHTML = "<h3>" + country + "</h3>";  // Creating HTML content for country information
+    infoHTML += "<p>" + info + "</p>";  // Adding country information as paragraph
+     // Adding close button
     infoHTML += '<div class="close-btn-container"><span id="close-btn" onclick="closeCountryInfo()">Close</span></div>'; 
+    // Adding an iframe with a Google Maps embed for the country location
     infoHTML += '<iframe width="560" height="315" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15010.981291428962!2d20.08101212129072!3d41.281921666043516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1352ebe42057bf7f%3A0x3314cb9cb7b7b3!2sPeja!5e0!3m2!1sen!2s!4v1649183408354!5m2!1sen!2s" frameborder="0" style="border:0;" allowfullscreen></iframe>';
-    document.getElementById('country-info').innerHTML = infoHTML;
-    document.getElementById('country-info').style.display = 'block';
+    
+        // Setting the generated HTML content to the country-info div
+   document.getElementById('country-info').innerHTML = infoHTML;
+       // Making the country-info div visible
+   document.getElementById('country-info').style.display = 'block';
 }
 
 function closeCountryInfo() {
+        // Making the country-info div invisible
     document.getElementById('country-info').style.display = 'none';
 }
 

@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
         <h1>Data that we received: </h1>
         <div class="contact-details">
-            <p><strong>Name:</strong> <?php echo htmlspecialchars($name); ?></p>
+            <p><strong>Name:</strong> <?php echo htmlspecialchars($name); ?></p>  <!-- Posted the recived data to te box -->
             <p><strong>Email:</strong> <?php echo htmlspecialchars($email); ?></p>
             <p><strong>Phone:</strong> <?php echo htmlspecialchars($phone); ?></p>
             <p><strong>Message:</strong> <?php echo htmlspecialchars($message); ?></p>

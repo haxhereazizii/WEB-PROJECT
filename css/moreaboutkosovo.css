@@ -61,7 +61,7 @@ body {
 
     }
 
-
+ /* contry info that is showed up after clicking process */
 #country-info {
   display: none;
   position: fixed;

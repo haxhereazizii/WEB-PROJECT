@@ -145,6 +145,7 @@ form button {
     border-radius: 30px;
 }
 
+/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
     .container {
       width: 80%;

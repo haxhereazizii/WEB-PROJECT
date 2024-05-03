@@ -1,20 +1,27 @@
+
+<!-- created the php code thet gets the data and checks -->
+
 <?php
  @include 'config.php';
+ // Check if the form is submitted
 if(isset($_POST['submit'])){
-
+  // Escape user inputs to prevent SQL injection
   $name= mysqli_real_escape_string($conn,$_POST['name']);
   $email= mysqli_real_escape_string($conn,$_POST['email']);
-  $pass= md5($_POST['password']);
-  $cpass= md5($_POST['cpassword']);
-  $user_type= $_POST['user_type'];
+  $pass= md5($_POST['password']);  // Encrypt password for security
+  $cpass= md5($_POST['cpassword']); // Encrypt password for security
+  $user_type= $_POST['user_type'];  // Get user type from form, dip note admin part is for later because i am thinking of improving this project 
 
+    // Check if user with the same email and password already exists
   $select ="SELECT * FROM user_form WHERE email = '$email'&& password='$pass'";
   $result = mysqli_query($conn, $select);
 
+   // If user already exists, display an error message
   if (mysqli_num_rows($result)>0){
     $errorr[]= 'User already exist!!';
   }
   else{
+    // If passwords match, insert new user into the database, if not the alert
     if($pass != $cpass){
         $errorr[]= 'Password isnt mached!!';
     } else{
@@ -27,7 +34,6 @@ if(isset($_POST['submit'])){
 
 };
 ?>
-
 
 
 <!DOCTYPE html>
@@ -46,22 +52,26 @@ if(isset($_POST['submit'])){
 <div class="form-container">
 <form action="" method="post"> 
 <h3> Register now! </h3>
+
+
 <?php 
-if(isset($error)){
+if(isset($error)){  // Display error messages
     foreach($error as $error){
         echo '<span class="error-msg">' .$error.'</span>';
     };
 };
 ?>
-<input type="text" name="name" required placeholder ="Enter your name">
-<input type="email" name="email" required placeholder ="Enter your email">
-<input type="password" name="password" required placeholder ="Enter your password">
-<input type="password" name="cpassword" required placeholder ="Confirm your password">
+<input type="text" name="name" required placeholder ="Enter your name"> <!-- Input field for name -->
+<input type="email" name="email" required placeholder ="Enter your email"> <!-- Input field for mail, with mail format -->
+<input type="password" name="password" required placeholder ="Enter your password"> <!-- Input field for password-->
+<input type="password" name="cpassword" required placeholder ="Confirm your password"> <!-- Input field for confirm password -->
 <select name="user_type">
-<option value="user"> User </option>
-<option value= "admin"> Admin </option>
+<option value="user"> User </option> <!-- type user -->
+<option value= "admin"> Admin </option>  <!-- type admin  for later-->
 </select>
+<!-- Submit button -->
 <input type="submit" name="submit" value="register now" class="form-btn">
+<!-- Link to login form -->
 <p> Already have an account? <a href="login_form.php">Login Now </p>
 
 </form>

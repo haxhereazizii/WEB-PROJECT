@@ -73,7 +73,7 @@ body {
         margin-top: 15px; 
       }
       
-      .card-content .exploremore:hover {
+      .card-content .exploremore:hover {   /* mause on  */
         background-color:#FFE4E5 ;
         color: crimson; 
       }

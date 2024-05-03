@@ -22,7 +22,7 @@ if(!isset( $_SESSION['admin_name'])){
 </head>
 <body>
     <div class="container">
-
+ <!-- admin page is created for later!-->
     <div class="content">
         <h3> hi, <span>   <?php echo $_SESSION['admin_name']; ?>
         </span> </h3>
