@@ -21,7 +21,7 @@ if(!isset($_SESSION['user_name'])){
 <body>
 <nav class="navbar navbar-expand-lg  fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Dear, <span><?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest'; ?></span> Feel free to review us!</a>
+    <a class="navbar-brand" href="#">Dear <span><?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest'; ?>,</span> Feel free to review us!</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
