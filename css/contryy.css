@@ -29,16 +29,6 @@ h1 {
   color: #312f2f;
 }
 
-.search-btn {
-  background-color: crimson;
-  color: #3b3939;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
 .search-box {
   padding: 10px 20px;
   border: 1px solid #ccc;

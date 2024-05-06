@@ -12,6 +12,7 @@ if(!isset(  $_SESSION['user_name'])){
         body {
             background-color: #FFE4E5 !important;
         }
+        
     </style>
 
 <!DOCTYPE html>
