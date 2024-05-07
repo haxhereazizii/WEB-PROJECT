@@ -16,7 +16,10 @@ if(!isset($_SESSION['user_name'])){
     <title>Review Form</title>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <link rel="stylesheet" href="css/rewiew.css">
+    <link rel="stylesheet" href="css/review.css">
+    <STYle>
+      
+    </STYle>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg  fixed-top">
@@ -73,16 +76,22 @@ if(!isset($_SESSION['user_name'])){
         <div class="msgerrorr" v-if="errors.email">{{ errors.email }}</div>
         <input type="text" v-model="formData.phone" name="phone" placeholder="Your phone number here" >
         <div class="msgerrorr" v-if="errors.phone">{{ errors.phone }}</div>
-        <textarea v-model="formData.message" name="message" rows="7" placeholder="What do you want us to know about, anything to fix?" ></textarea>
-        <div class="msgerrorr" v-if="errors.message">{{ errors.message }}</div>
 
+        <select v-model="formData.rating" name="rating">
+            <option value="">RATE US FROM 1 TO 5</option>
+            <option value="1">1 STAR</option>
+            <option value="2">2 STARS</option>
+            <option value="3">3 STARS</option>
+            <option value="4">4 STARS</option>
+            <option value="5">5 STARS</option>
+        </select>
+        <div class="msgerrorr" v-if="errors.rating">{{ errors.rating }}</div>
+     
+        
         <div class="button-container">
             <button type="submit" :disabled="!validateForm">Send</button>
             <button type="button" @click="clearForm">CLEAR</button>
         </div>
-    
-
-     
     </form>
 </div>
 </div>
@@ -98,7 +107,7 @@ if(!isset($_SESSION['user_name'])){
         <p>Name: {{ formData.name }}</p>
         <p>Email: {{ formData.email }}</p>
         <p>Phone: {{ formData.phone }}</p>
-        <p>Message: {{ formData.message }}</p>
+        <p>Rating: {{ formData.rating }}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -110,71 +119,69 @@ if(!isset($_SESSION['user_name'])){
 <script>
 
   new Vue({
-    el: '#app',  // Binding Vue instance to the element with id 'app'
+    el: '#app',  
     data: {
-      // Data properties for form fields and validation errors
+ 
       formData: {
         name: '',
         email: '',
         phone: '',
-        message: ''
+        rating: ''
       },
       errors: {}
     },
     methods: {
       // Method to validate form data
       validateForm() {   
-    let errors = {};
-       // Validation rules
-    if (!this.formData.name) {
-        errors.name = '*Name is required';
-    }
+        let errors = {};
+        // Validation rules
+        if (!this.formData.name) {
+            errors.name = '*Name is required';
+        }
 
-    if (!this.formData.email) {
-        errors.email = '*Email is required';
-    } else if (!this.isValidEmail(this.formData.email)) {
-        errors.email = '*Invalid email address';
-    }
+        if (!this.formData.email) {
+            errors.email = '*Email is required';
+        } else if (!this.isValidEmail(this.formData.email)) {
+            errors.email = '*Invalid email address';
+        }
 
-    if (!this.formData.phone) {
-        errors.phone = '*Phone number is required';
-    } else if (!/^\d+$/.test(this.formData.phone)) {
-        errors.phone = '*Phone number must contain only numbers';
-    }
+        if (!this.formData.phone) {
+            errors.phone = '*Phone number is required';
+        } else if (!/^\d+$/.test(this.formData.phone)) {
+            errors.phone = '*Phone number must contain only numbers';
+        }
 
-    if (!this.formData.message) {
-        errors.message = '*Message is required';
-    }
-      // Assign errors object to the Vue data property
-    this.errors = errors;
-      // Return true if there are no errors, false otherwise
-    return Object.keys(errors).length === 0;
-},
+        if (!this.formData.rating) {
+            errors.rating = '*Rating is required';
+        }
+        // Assign errors object to the Vue data property
+        this.errors = errors;
+        // Return true if there are no errors, false otherwise
+        return Object.keys(errors).length === 0;
+      },
       isValidEmail(email) {     // Email validation logic
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       },
-          // Method to clear form data and errors
+      // Method to clear form data and errors
       clearForm() {
         this.formData = {
           name: '',
           email: '',
           phone: '',
-          message: ''
+          rating: ''
         };
         this.errors = {};
       },
-            // Method to show form data modal
-
+      // Method to show form data modal
       showModal() {
         $('#formDataModal').modal('show'); 
       },
       submitForm() {
-    if (this.validateForm()) {
-        // Submit the form programmatically
-        document.getElementById('reviewForm').submit();
-    }
-}
-
+        if (this.validateForm()) {
+          // Submit the form programmatically
+          document.getElementById('reviewForm').submit();
+        }
+      }
     }
   });
 </script>
