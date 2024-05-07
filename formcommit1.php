@@ -1,17 +1,25 @@
-
 <?php
 // Check if the request method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-     // Retrieve form data from POST request
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $message = $_POST['message'];
-
+    // Retrieve form data from POST request
+    $name = isset($_POST['name']) ? $_POST['name'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+    $rating = isset($_POST['rating']) ? $_POST['rating'] : '';
 }
-?>
 
+$ratingsMap = [
+    '1' => '1 Star',
+    '2' => '2 Stars',
+    '3' => '3 Stars',
+    '4' => '4 Stars',
+    '5' => '5 Stars'
+];
+
+
+$selectedRating = isset($ratingsMap[$rating]) ? $ratingsMap[$rating] : '';
+
+?>
 
 
 <!DOCTYPE html>
@@ -29,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><strong>Name:</strong> <?php echo htmlspecialchars($name); ?></p>   <!-- postes the data to the review form -->
             <p><strong>Email:</strong> <?php echo htmlspecialchars($email); ?></p>
             <p><strong>Phone:</strong> <?php echo htmlspecialchars($phone); ?></p>
-            <p><strong>Message:</strong> <?php echo htmlspecialchars($message); ?></p>
+            <p><strong>RATING:</strong> <?php echo htmlspecialchars($rating); ?></p>
         </div>
         <button onclick="window.location.href='rewiew.php'">Go Back to the rewiew form</button>
       
