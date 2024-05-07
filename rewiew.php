@@ -18,7 +18,7 @@ if(!isset($_SESSION['user_name'])){
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <link rel="stylesheet" href="css/review.css">
     <STYle>
-      
+
     </STYle>
 </head>
 <body>
@@ -86,7 +86,11 @@ if(!isset($_SESSION['user_name'])){
             <option value="5">5 STARS</option>
         </select>
         <div class="msgerrorr" v-if="errors.rating">{{ errors.rating }}</div>
-     
+        <div class="form-group">
+    <label>Do you want to visit Kosovo?</label><br>
+    <input type="radio" v-model="formData.visit" name="visit" value="Yes"> Yes<br>
+    <input type="radio" v-model="formData.visit" name="visit" value="No"> No<br>
+</div>
         
         <div class="button-container">
             <button type="submit" :disabled="!validateForm">Send</button>
@@ -126,7 +130,8 @@ if(!isset($_SESSION['user_name'])){
         name: '',
         email: '',
         phone: '',
-        rating: ''
+        rating: '',
+        visit: 'Yes'
       },
       errors: {}
     },
