@@ -2,26 +2,25 @@
 @include 'config.php';
 session_start();
 if(isset($_POST['submit'])) {  // Checking if the form is submitted
-// checking input data
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    // checking input data
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $pass = md5($_POST['password']);
-    $cpass = md5($_POST['cpassword']);
-    $user_type = $_POST['user_type'];
-  // Query to check if the user exists
+    
+    // Query to check if the user exists
     $select = "SELECT * FROM user_form WHERE email = '$email'&& password='$pass'";
-  // Executing the query
+    
+    // Executing the query
     $result = mysqli_query($conn, $select);
-// Executing the query
+
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_array($result);
 
         if($row['user_type'] == 'admin') {
             $_SESSION['admin_name'] = $row['name'];
-            header('location: admin_page.php');   // Redirecting to admin page for later!!!
+            header('location: admin_page.php');   // Redirecting to admin page created for later because i am thinking on improving this project!
         }
         elseif($row['user_type'] == 'user') {
-            $_SESSION['user_name'] = $row['name'];  // Redirecting to user page
+            $_SESSION['user_name'] = $row['name'];  // Redirecting to user page main page for this projecct
             header('location: user_page.php');
         }
     } 
@@ -29,7 +28,7 @@ if(isset($_POST['submit'])) {  // Checking if the form is submitted
         $error[] = 'Incorrect email or password!'; // Error message for incorrect credentials
     }
 
-};
+}
 ?>
 
 
